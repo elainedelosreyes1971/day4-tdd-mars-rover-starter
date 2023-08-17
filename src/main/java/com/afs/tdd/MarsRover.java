@@ -2,7 +2,7 @@ package com.afs.tdd;
 
 public class MarsRover {
 
-    private Location location;
+    private final Location location;
 
     public MarsRover(Location location) {
         this.location = location;
@@ -25,7 +25,7 @@ public class MarsRover {
     }
 
     private void turnRight() {
-        switch(location.getDirection()){
+        switch (location.getDirection()) {
             case NORTH:
                 location.setDirection(Direction.EAST);
                 break;
@@ -44,7 +44,7 @@ public class MarsRover {
     }
 
     private void turnLeft() {
-        switch(location.getDirection()){
+        switch (location.getDirection()) {
             case NORTH:
                 location.setDirection(Direction.WEST);
                 break;

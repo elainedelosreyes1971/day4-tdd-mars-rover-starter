@@ -77,7 +77,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_change_facing_direction_to_west_when_executeCommand_given_0_0_N_and_command_turn_left(){
+    void should_change_facing_direction_to_west_when_executeCommand_given_0_0_N_and_command_turn_left() {
         //Given
         initialLocation = new Location(0, 0, Direction.NORTH);
         givenCommand = Command.TURN_LEFT;
@@ -94,7 +94,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_change_facing_direction_to_east_when_executeCommand_given_0_0_S_and_command_turn_left(){
+    void should_change_facing_direction_to_east_when_executeCommand_given_0_0_S_and_command_turn_left() {
         //Given
         initialLocation = new Location(0, 0, Direction.SOUTH);
         givenCommand = Command.TURN_LEFT;
@@ -111,7 +111,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_change_facing_direction_to_north_when_executeCommand_given_0_0_E_and_command_turn_left(){
+    void should_change_facing_direction_to_north_when_executeCommand_given_0_0_E_and_command_turn_left() {
         //Given
         initialLocation = new Location(0, 0, Direction.EAST);
         givenCommand = Command.TURN_LEFT;
@@ -128,7 +128,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_change_facing_direction_to_south_when_executeCommand_given_0_0_W_and_command_turn_left(){
+    void should_change_facing_direction_to_south_when_executeCommand_given_0_0_W_and_command_turn_left() {
         //Given
         initialLocation = new Location(0, 0, Direction.WEST);
         givenCommand = Command.TURN_LEFT;
@@ -143,8 +143,9 @@ class MarsRoverTest {
         Assertions.assertEquals(0, currentLocation.getY());
         Assertions.assertEquals(Direction.SOUTH, currentLocation.getDirection());
     }
+
     @Test
-    void should_change_facing_direction_to_east_when_executeCommand_given_0_0_N_and_command_turn_right(){
+    void should_change_facing_direction_to_east_when_executeCommand_given_0_0_N_and_command_turn_right() {
         //Given
         initialLocation = new Location(0, 0, Direction.NORTH);
         givenCommand = Command.TURN_RIGHT;
@@ -161,7 +162,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_change_facing_direction_to_west_when_executeCommand_given_0_0_S_and_command_turn_right(){
+    void should_change_facing_direction_to_west_when_executeCommand_given_0_0_S_and_command_turn_right() {
         //Given
         initialLocation = new Location(0, 0, Direction.SOUTH);
         givenCommand = Command.TURN_RIGHT;
@@ -178,7 +179,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_change_facing_direction_to_south_when_executeCommand_given_0_0_E_and_command_turn_right(){
+    void should_change_facing_direction_to_south_when_executeCommand_given_0_0_E_and_command_turn_right() {
         //Given
         initialLocation = new Location(0, 0, Direction.EAST);
         givenCommand = Command.TURN_RIGHT;
@@ -195,7 +196,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_change_facing_direction_to_north_when_executeCommand_given_0_0_W_and_command_turn_right(){
+    void should_change_facing_direction_to_north_when_executeCommand_given_0_0_W_and_command_turn_right() {
         //Given
         initialLocation = new Location(0, 0, Direction.WEST);
         givenCommand = Command.TURN_RIGHT;
