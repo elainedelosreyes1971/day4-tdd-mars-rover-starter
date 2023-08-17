@@ -219,7 +219,7 @@ class MarsRoverTest {
     @Test
     void should_change_facing_direction_when_executeBatchCommands_given_O_O_N_and_command_MLMR() {
         //Given
-        List<String> commands = Arrays.asList("M", "L", "M", "R");
+        List<String> commands = new ArrayList<>(Arrays.asList("MLMR".split("")));
         initialLocation = new Location(0, 0, Direction.NORTH);
         marsRover = new MarsRover(initialLocation);
 
