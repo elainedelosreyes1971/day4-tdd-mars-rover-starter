@@ -9,7 +9,7 @@ public class MarsRover {
     }
 
     public void executeCommand(Command givenCommand) {
-        switch(givenCommand){
+        switch (givenCommand) {
             case MOVE:
                 moveForward();
                 break;
@@ -31,7 +31,7 @@ public class MarsRover {
     }
 
     private void moveForward() {
-        switch(location.getDirection()){
+        switch (location.getDirection()) {
             case NORTH:
                 location.setY(location.getY() + 1);
                 break;

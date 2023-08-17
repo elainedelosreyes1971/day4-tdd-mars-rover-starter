@@ -8,6 +8,7 @@ class MarsRoverTest {
     private Location initialLocation;
     private MarsRover marsRover;
     private Location currentLocation;
+
     @Test
     void should_change_to_location_0_1_N_when_executeCommand_given_0_0_North_and_command_Move() {
         // Given
@@ -18,13 +19,13 @@ class MarsRoverTest {
         marsRover.executeCommand(givenCommand);
         currentLocation = marsRover.getCurrentLocation();
         // Then
-        Assertions.assertEquals(0 , currentLocation.getX());
-        Assertions.assertEquals(1 , currentLocation.getY());
-        Assertions.assertEquals(Direction.NORTH , currentLocation.getDirection());
+        Assertions.assertEquals(0, currentLocation.getX());
+        Assertions.assertEquals(1, currentLocation.getY());
+        Assertions.assertEquals(Direction.NORTH, currentLocation.getDirection());
     }
 
     @Test
-    void should_change_to_south_location_when_executeCommand_given_0_0_S_and_command_Move(){
+    void should_change_to_south_location_when_executeCommand_given_0_0_S_and_command_Move() {
         //Given
         initialLocation = new Location(0, 0, Direction.SOUTH);
         givenCommand = Command.MOVE;
@@ -36,13 +37,13 @@ class MarsRoverTest {
 
         //Then
         Assertions.assertEquals(0, currentLocation.getX());
-        Assertions.assertEquals(-1,currentLocation.getY());
+        Assertions.assertEquals(-1, currentLocation.getY());
         Assertions.assertEquals(Direction.SOUTH, currentLocation.getDirection());
 
     }
 
     @Test
-    void should_change_to_east_location_when_executeCommand_given_0_0_E_and_command_Move(){
+    void should_change_to_east_location_when_executeCommand_given_0_0_E_and_command_Move() {
         //Given
         initialLocation = new Location(0, 0, Direction.EAST);
         givenCommand = Command.MOVE;
@@ -54,14 +55,14 @@ class MarsRoverTest {
 
         //Then
         Assertions.assertEquals(1, currentLocation.getX());
-        Assertions.assertEquals(0,currentLocation.getY());
+        Assertions.assertEquals(0, currentLocation.getY());
         Assertions.assertEquals(Direction.EAST, currentLocation.getDirection());
     }
 
     @Test
-    void should_change_to_west_location_when_executeCommand_given_0_0_W_and_command_Move(){
+    void should_change_to_west_location_when_executeCommand_given_0_0_W_and_command_Move() {
         //Given
-        initialLocation = new Location(0,0,Direction.WEST);
+        initialLocation = new Location(0, 0, Direction.WEST);
         givenCommand = Command.MOVE;
         marsRover = new MarsRover(initialLocation);
 
@@ -71,7 +72,7 @@ class MarsRoverTest {
 
         //Then
         Assertions.assertEquals(-1, currentLocation.getX());
-        Assertions.assertEquals(0,currentLocation.getY());
+        Assertions.assertEquals(0, currentLocation.getY());
         Assertions.assertEquals(Direction.WEST, currentLocation.getDirection());
     }
 }
