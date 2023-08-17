@@ -28,6 +28,13 @@ public class MarsRover {
     }
 
     private void turnLeft() {
+        switch(location.getDirection()){
+            case NORTH:
+                location.setDirection(Direction.WEST);
+                break;
+            default:
+                break;
+        }
     }
 
     private void moveForward() {
