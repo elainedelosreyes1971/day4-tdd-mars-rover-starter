@@ -1,6 +1,8 @@
 package com.afs.tdd;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MarsRover {
 
@@ -88,20 +90,17 @@ public class MarsRover {
     }
 
     public void executeBatchCommands(List<String> commands) {
+        Map<String, Command> commandCache = createCommandMap();
         for (String command : commands) {
-            switch (command) {
-                case "M":
-                    executeCommand(Command.MOVE);
-                    break;
-                case "L":
-                    executeCommand(Command.TURN_LEFT);
-                    break;
-                case "R":
-                    executeCommand(Command.TURN_RIGHT);
-                    break;
-                default:
-                    break;
-            }
+            executeCommand(commandCache.get(command));
         }
+    }
+
+    private Map<String, Command> createCommandMap() {
+        Map<String, Command> commandCache = new HashMap<>();
+        commandCache.put("M", Command.MOVE);
+        commandCache.put("L", Command.TURN_LEFT);
+        commandCache.put("R", Command.TURN_RIGHT);
+        return commandCache;
     }
 }
