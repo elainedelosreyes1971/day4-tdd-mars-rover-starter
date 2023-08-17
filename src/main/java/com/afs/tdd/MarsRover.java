@@ -37,6 +37,8 @@ public class MarsRover {
                 break;
             case SOUTH:
                 location.setY(location.getY() - 1);
+            case EAST:
+                location.setX(location.getX() + 1);
             default:
                 break;
         }
