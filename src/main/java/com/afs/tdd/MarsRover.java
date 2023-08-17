@@ -32,6 +32,9 @@ public class MarsRover {
             case NORTH:
                 location.setDirection(Direction.WEST);
                 break;
+            case SOUTH:
+                location.setDirection(Direction.EAST);
+                break;
             default:
                 break;
         }
