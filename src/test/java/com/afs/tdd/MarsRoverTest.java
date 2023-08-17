@@ -4,11 +4,12 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class MarsRoverTest {
+    Command givenCommand;
     @Test
     void should_change_to_location_0_1_N_when_executeCommand_given_0_0_North_and_command_Move() {
         // Given
         Location initialLocation = new Location(0, 0, Direction.NORTH);
-        Command givenCommand = Command.MOVE;
+        givenCommand = Command.MOVE;
         MarsRover marsRover = new MarsRover(initialLocation);
         // When
         marsRover.executeCommand(givenCommand);
