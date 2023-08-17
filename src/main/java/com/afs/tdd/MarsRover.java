@@ -1,5 +1,7 @@
 package com.afs.tdd;
 
+import java.util.List;
+
 public class MarsRover {
 
     private final Location location;
@@ -83,5 +85,23 @@ public class MarsRover {
 
     public Location getCurrentLocation() {
         return location;
+    }
+
+    public void executeBatchCommands(List<String> commands) {
+        for (String command : commands) {
+            switch (command) {
+                case "M":
+                    executeCommand(Command.MOVE);
+                    break;
+                case "L":
+                    executeCommand(Command.TURN_LEFT);
+                    break;
+                case "R":
+                    executeCommand(Command.TURN_RIGHT);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
