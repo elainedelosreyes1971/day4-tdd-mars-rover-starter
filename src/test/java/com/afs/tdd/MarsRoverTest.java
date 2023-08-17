@@ -3,6 +3,10 @@ package com.afs.tdd;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 class MarsRoverTest {
     private Command givenCommand;
     private Location initialLocation;
@@ -209,6 +213,23 @@ class MarsRoverTest {
         //Then
         Assertions.assertEquals(0, currentLocation.getX());
         Assertions.assertEquals(0, currentLocation.getY());
+        Assertions.assertEquals(Direction.NORTH, currentLocation.getDirection());
+    }
+
+    @Test
+    void should_change_facing_direction_when_executeBatchCommands_given_O_O_N_and_command_MLMR() {
+        //Given
+        List<String> commands = Arrays.asList("M", "L", "M", "R");
+        initialLocation = new Location(0, 0, Direction.NORTH);
+        marsRover = new MarsRover(initialLocation);
+
+        //When
+        marsRover.executeBatchCommands(commands);
+        currentLocation = marsRover.getCurrentLocation();
+
+        //Then
+        Assertions.assertEquals(-1, currentLocation.getX());
+        Assertions.assertEquals(1, currentLocation.getY());
         Assertions.assertEquals(Direction.NORTH, currentLocation.getDirection());
     }
 }
