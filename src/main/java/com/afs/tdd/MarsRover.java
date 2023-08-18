@@ -1,8 +1,6 @@
 package com.afs.tdd;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class MarsRover {
 
@@ -89,18 +87,9 @@ public class MarsRover {
         return location;
     }
 
-    public void executeBatchCommands(List<String> commands) {
-        Map<String, Command> commandCache = createCommandMap();
-        for (String command : commands) {
-            executeCommand(commandCache.get(command));
+    public void executeBatchCommands(List<Command> commands) {
+        for (Command command : commands) {
+            executeCommand(command);
         }
-    }
-
-    private Map<String, Command> createCommandMap() {
-        Map<String, Command> commandCache = new HashMap<>();
-        commandCache.put("M", Command.MOVE);
-        commandCache.put("L", Command.TURN_LEFT);
-        commandCache.put("R", Command.TURN_RIGHT);
-        return commandCache;
     }
 }
